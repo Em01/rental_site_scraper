@@ -15,7 +15,7 @@
         <td><%= link_to post.heading, post %></td>
         <td><%= number_to_currency(post.price, precision: 0) %></td>
         <td><%= post.neighborhood %></td>
-        <td><%= post.timestamp %></td>
+        <td><%= Time.at(post.timestamp.to_i) %></td>
       </tr>
     <% end %>
   </tbody>
