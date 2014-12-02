@@ -27,8 +27,8 @@ uri.query = URI.encode_www_form(params)
 result = JSON.parse(open(uri).read)
 
 # Display results to screen
-puts result["postings"].first["heading"]
-  end
+puts result["postings"].second["location"]["locality"]
+end
 
   desc "TODO"
   task destroy_all_posts: :environment do
