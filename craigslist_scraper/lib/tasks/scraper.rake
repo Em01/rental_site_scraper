@@ -47,8 +47,9 @@ puts JSON.pretty_generate result["postings"]
 # 	end
 end
 
-  desc "TODO"
+  desc "Destroy all posting data"
   task destroy_all_posts: :environment do
+  	Post.destroy_all
   end
 
 end
