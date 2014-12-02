@@ -30,20 +30,21 @@ result = JSON.parse(open(uri).read)
 # puts result["postings"].second["location"]["locality"]
 
 # Store results in database
-result["postings"].each do |posting|
+puts JSON.pretty_generate result["postings"]
+# result["postings"].each do |posting|
 
-	# Create new Post
-	@post = Post.new
-	@post.heading = posting["heading"]
-	@post.body = posting["body"]
-	@post.price = posting["price"]
-	@post.neighborhood = posting["location"]["locality"]
-	@post.external_url = posting["external_url"]
-	@post.timestamp = posting["timestamp"]
+# 	# Create new Post
+# 	@post = Post.new
+# 	@post.heading = posting["heading"]
+# 	@post.body = posting["body"]
+# 	@post.price = posting["price"]
+# 	@post.neighborhood = posting["location"]["locality"]
+# 	@post.external_url = posting["external_url"]
+# 	@post.timestamp = posting["timestamp"]
 
-	# Save Post
-	@post.save 
-	end
+# 	# Save Post
+# 	@post.save 
+# 	end
 end
 
   desc "TODO"
