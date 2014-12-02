@@ -27,7 +27,7 @@ uri.query = URI.encode_www_form(params)
 result = JSON.parse(open(uri).read)
 
 # Display results to screen
-puts JSON.pretty_generate result
+puts result["postings"].first["heading"]
   end
 
   desc "TODO"
