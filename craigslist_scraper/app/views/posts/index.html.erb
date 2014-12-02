@@ -5,7 +5,7 @@
       <th>Heading</th>
       <th>Price</th>
       <th>Neighborhood</th>
-      <th>Timestamp</th>
+      <th>Last Updated</th>
     </tr>
   </thead>
 
@@ -15,7 +15,7 @@
         <td><%= link_to post.heading, post %></td>
         <td><%= number_to_currency(post.price, precision: 0) %></td>
         <td><%= post.neighborhood %></td>
-        <td><%= Time.at(post.timestamp.to_i) %></td>
+        <td><%= "#{time_ago_in_words(Time.at(post.timestamp.to_i))} ago" %></td>
       </tr>
     <% end %>
   </tbody>
