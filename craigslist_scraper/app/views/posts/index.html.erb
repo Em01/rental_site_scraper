@@ -17,16 +17,16 @@
       <%= text_field_tag :sqft, params[:sqft] %>
 
       <%= label_tag :cats %>
-      <%= text_field_tag :cats, params[:cats] %>
+      <%= check_box_tag :cats, "YES", params[:cats] %>
 
       <%= label_tag :dogs %>
-      <%= text_field_tag :dogs, params[:dogs] %>
+      <%= check_box_tag :dogs, "YES", params[:dogs] %>
 
       <%= label_tag :w_d_in_unit %>
-      <%= text_field_tag :w_d_in_unit, params[:w_d_in_unit] %>
+      <%= check_box_tag :w_d_in_unit, "YES", params[:w_d_in_unit] %>
 
       <%= label_tag :street_parking %>
-      <%= text_field_tag :street_parking, params[:street_parking] %>
+      <%= check_box_tag :street_parking, "YES", params[:street_parking] %>
 
       <%= submit_tag "Search", name: nil %>
     <% end %>
