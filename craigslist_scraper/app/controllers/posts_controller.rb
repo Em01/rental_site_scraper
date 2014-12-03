@@ -5,7 +5,8 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all.paginate(:page => params[:page], :per_page => 30)
-
+    @posts = @posts.where(bedrooms: params["bedrooms"]) if params["bedrooms"].present?
+    @posts = @posts.where(bathrooms: params["bathrooms"]) if params["bathrooms"].present?
   end
 
   # GET /posts/1

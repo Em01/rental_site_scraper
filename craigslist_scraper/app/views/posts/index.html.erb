@@ -2,7 +2,10 @@
   <div class="filter">
     <%= form_tag posts_path, method: :get do %>
       <%= label_tag :bedrooms %>
-      <%= text_field_tag :bedrooms %>
+      <%= text_field_tag :bedrooms, params[:bedrooms] %>
+
+      <%= label_tag :bathrooms %>
+      <%= text_field_tag :bathrooms, params[:bathrooms] %>
 
       <%= submit_tag "Search", name: nil %>
     <% end %>
