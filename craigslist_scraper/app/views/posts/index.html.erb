@@ -10,11 +10,17 @@
       <%= label_tag :neighborhood %>
       <%= select_tag(:neighborhood, options_from_collection_for_select(Location.all, :name, :name, params[:neighborhood]), {include_blank: true}) %>
 
-      <%= label_tag :price %>
-      <%= text_field_tag :price, params[:price] %>
+      <%= label_tag :min_price %>
+      <%= text_field_tag :min_price, params[:min_price] %>
 
-      <%= label_tag :sqft %>
-      <%= text_field_tag :sqft, params[:sqft] %>
+      <%= label_tag :max_price %>
+      <%= text_field_tag :max_price, params[:max_price] %>
+
+      <%= label_tag :min_sqft %>
+      <%= text_field_tag :min_sqft, params[:min_sqft] %>
+
+      <%= label_tag :max_sqft %>
+      <%= text_field_tag :max_sqft, params[:max_sqft] %>
 
       <%= label_tag :cats %>
       <%= check_box_tag :cats, "YES", params[:cats] %>
