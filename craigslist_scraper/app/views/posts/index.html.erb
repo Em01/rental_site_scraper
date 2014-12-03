@@ -19,14 +19,14 @@
 
     <div class="row">
       <div class="col-md-4">
-        <%= text_field_tag :min_price, params[:min_price] %>
-        <%= text_field_tag :max_price, params[:max_price] %>
+        <%= text_field_tag :min_price, params[:min_price], placeholder: "minimum" %>
+        <%= text_field_tag :max_price, params[:max_price], placeholder: "maximum" %>
       </div>
       <div class="col-md-2">
-        <%= text_field_tag :bedrooms, params[:bedrooms] %>
+        <%= text_field_tag :bedrooms, params[:bedrooms], placeholder: "# of beds" %>
       </div>
       <div class="col-md-2">
-        <%= text_field_tag :bathrooms, params[:bathrooms] %>
+        <%= text_field_tag :bathrooms, params[:bathrooms], placeholder: "# of baths" %>
       </div>
       <div class="col-md-4">
         <%= select_tag(:neighborhood, options_from_collection_for_select(Location.all, :name, :name, params[:neighborhood]), {include_blank: true}) %>
@@ -38,35 +38,27 @@
         <%= label_tag :min_sqft %>
         <%= label_tag :max_sqft %>
       </div>
-      <div class="col-md-1">
-        <%= label_tag :cats %>
-      </div>
-      <div class="col-md-1">
-        <%= label_tag :dogs %>
-      </div>
-      <div class="col-md-2">
-        <%= label_tag "Washer/dryer in unit" %>
-      </div>    
-      <div class="col-md-2">
-        <%= label_tag :street_parking %>
-      </div>
     </div>
 
     <div class="row">
       <div class="col-md-4">
-        <%= text_field_tag :min_sqft, params[:min_sqft] %>
-        <%= text_field_tag :max_sqft, params[:max_sqft] %>
+        <%= text_field_tag :min_sqft, params[:min_sqft], placeholder: "minimum" %>
+        <%= text_field_tag :max_sqft, params[:max_sqft], placeholder: "maximum" %>
       </div>
       <div class="col-md-1">
+        <%= label_tag :cats %>
         <%= check_box_tag :cats, "YES", params[:cats] %>
       </div>
       <div class="col-md-1">
+        <%= label_tag :dogs %>
         <%= check_box_tag :dogs, "YES", params[:dogs] %>
       </div>
       <div class="col-md-2">
+        <%= label_tag "Washer/dryer in unit" %>
         <%= check_box_tag :w_d_in_unit, "YES", params[:w_d_in_unit] %>
       </div>
       <div class="col-md-2">
+        <%= label_tag :street_parking %>
         <%= check_box_tag :street_parking, "YES", params[:street_parking] %>
       </div>
       <div class="col-md-2">
