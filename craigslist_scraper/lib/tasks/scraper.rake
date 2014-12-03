@@ -32,7 +32,7 @@ result = JSON.parse(open(uri).read)
 # Store results in database
 result["postings"].each do |posting|
 
-	# Create new Post
+# 	# Create new Post
 	@post = Post.new
 	@post.heading = posting["heading"]
 	@post.body = posting["body"]
@@ -41,15 +41,14 @@ result["postings"].each do |posting|
 	@post.external_url = posting["external_url"]
 	@post.timestamp = posting["timestamp"]
 	@post.bedrooms = posting["annotations"]["bedrooms"] if posting["annotations"]["bedrooms"].present?
-	@post.bedrooms = posting["annotations"]["bathrooms"] if posting["annotations"]["bathrooms"].present?
-	@post.bedrooms = posting["annotations"]["sqft"] if posting["annotations"]["sqft"].present?
-	@post.bedrooms = posting["annotations"]["cats"] if posting["annotations"]["cats"].present?
-	@post.bedrooms = posting["annotations"]["dogs"] if posting["annotations"]["dogs"].present?
-	@post.bedrooms = posting["annotations"]["sqft"] if posting["annotations"]["sqft"].present?
-	@post.bedrooms = posting["annotations"]["w_d_in_unit"] if posting["annotations"]["w_d_in_unit"].present?
-	@post.bedrooms = posting["annotations"]["street_parking"] if posting["annotations"]["street_parking"].present?
+	@post.bathrooms = posting["annotations"]["bathrooms"] if posting["annotations"]["bathrooms"].present?
+	@post.sqft = posting["annotations"]["sqft"] if posting["annotations"]["sqft"].present?
+	@post.cats = posting["annotations"]["cats"] if posting["annotations"]["cats"].present?
+	@post.dogs = posting["annotations"]["dogs"] if posting["annotations"]["dogs"].present?
+	@post.w_d_in_unit = posting["annotations"]["w_d_in_unit"] if posting["annotations"]["w_d_in_unit"].present?
+	@post.street_parking = posting["annotations"]["street_parking"] if posting["annotations"]["street_parking"].present?
 	
-	# Save Post
+# 	# Save Post
 	@post.save 
 	end
 end
