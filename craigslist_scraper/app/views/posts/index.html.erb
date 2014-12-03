@@ -8,7 +8,7 @@
       <%= text_field_tag :bathrooms, params[:bathrooms] %>
 
       <%= label_tag :neighborhood %>
-      <%= text_field_tag :neighborhood, params[:neighborhood] %>
+      <%= select_tag(:neighborhood, options_from_collection_for_select(Location.all, :name, :name, params[:neighborhood]), {include_blank: true}) %>
 
       <%= label_tag :price %>
       <%= text_field_tag :price, params[:price] %>
