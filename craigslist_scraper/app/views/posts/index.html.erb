@@ -1,43 +1,79 @@
 <div class="container">
   <div class="filter">
-    <%= form_tag posts_path, method: :get do %>
+    <%= form_tag posts_path, method: :get, class: "form-inline" do %>
 
     <div class="row">
-      <%= label_tag :min_price %>
-      <%= label_tag :max_price %>
-      <%= label_tag :bedrooms %>
-      <%= label_tag :bathrooms %>
-      <%= label_tag :neighborhood %>
+      <div class="col-md-4">
+        <%= label_tag "Price" %>
       </div>
-
-    <div class="row">
-      <%= text_field_tag :min_price, params[:min_price] %>
-      <%= text_field_tag :max_price, params[:max_price] %>
-      <%= text_field_tag :bedrooms, params[:bedrooms] %>
-      <%= text_field_tag :bathrooms, params[:bathrooms] %>
-      <%= select_tag(:neighborhood, options_from_collection_for_select(Location.all, :name, :name, params[:neighborhood]), {include_blank: true}) %>
-    </div>
-      
-      
-    <div class="row">
-      <%= label_tag :min_sqft %>
-      <%= label_tag :max_sqft %>
-      <%= label_tag :cats %>
-      <%= label_tag :dogs %>
-      <%= label_tag :w_d_in_unit %>
-      <%= label_tag :street_parking %>
+      <div class="col-md-2">
+        <%= label_tag :bedrooms %>
+      </div>
+      <div class="col-md-2">
+        <%= label_tag :bathrooms %>
+      </div>
+      <div class="col-md-4">
+        <%= label_tag :neighborhood %>
+      </div>
     </div>
 
     <div class="row">
-     <%= text_field_tag :min_sqft, params[:min_sqft] %>
-     <%= text_field_tag :max_sqft, params[:max_sqft] %>
-     <%= check_box_tag :cats, "YES", params[:cats] %>
-     <%= check_box_tag :dogs, "YES", params[:dogs] %>
-     <%= check_box_tag :w_d_in_unit, "YES", params[:w_d_in_unit] %>
-     <%= check_box_tag :street_parking, "YES", params[:street_parking] %>
-     <%= submit_tag "Search", name: nil %>
+      <div class="col-md-4">
+        <%= text_field_tag :min_price, params[:min_price] %>
+        <%= text_field_tag :max_price, params[:max_price] %>
+      </div>
+      <div class="col-md-2">
+        <%= text_field_tag :bedrooms, params[:bedrooms] %>
+      </div>
+      <div class="col-md-2">
+        <%= text_field_tag :bathrooms, params[:bathrooms] %>
+      </div>
+      <div class="col-md-4">
+        <%= select_tag(:neighborhood, options_from_collection_for_select(Location.all, :name, :name, params[:neighborhood]), {include_blank: true}) %>
+      </div>
+    </div>
+           
+    <div class="row">
+      <div class="col-md-4">
+        <%= label_tag :min_sqft %>
+        <%= label_tag :max_sqft %>
+      </div>
+      <div class="col-md-1">
+        <%= label_tag :cats %>
+      </div>
+      <div class="col-md-1">
+        <%= label_tag :dogs %>
+      </div>
+      <div class="col-md-2">
+        <%= label_tag "Washer/dryer in unit" %>
+      </div>    
+      <div class="col-md-2">
+        <%= label_tag :street_parking %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <%= text_field_tag :min_sqft, params[:min_sqft] %>
+        <%= text_field_tag :max_sqft, params[:max_sqft] %>
+      </div>
+      <div class="col-md-1">
+        <%= check_box_tag :cats, "YES", params[:cats] %>
+      </div>
+      <div class="col-md-1">
+        <%= check_box_tag :dogs, "YES", params[:dogs] %>
+      </div>
+      <div class="col-md-2">
+        <%= check_box_tag :w_d_in_unit, "YES", params[:w_d_in_unit] %>
+      </div>
+      <div class="col-md-2">
+        <%= check_box_tag :street_parking, "YES", params[:street_parking] %>
+      </div>
+      <div class="col-md-2">
+        <%= submit_tag "Search", name: nil %>
+      </div>
      </div>
-     
+
     <% end %>
   </div>
 
