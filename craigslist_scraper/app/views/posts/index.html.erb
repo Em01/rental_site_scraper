@@ -1,40 +1,43 @@
 <div class="container">
   <div class="filter">
     <%= form_tag posts_path, method: :get do %>
-      <%= label_tag :bedrooms %>
-      <%= text_field_tag :bedrooms, params[:bedrooms] %>
 
-      <%= label_tag :bathrooms %>
-      <%= text_field_tag :bathrooms, params[:bathrooms] %>
-
-      <%= label_tag :neighborhood %>
-      <%= select_tag(:neighborhood, options_from_collection_for_select(Location.all, :name, :name, params[:neighborhood]), {include_blank: true}) %>
-
+    <div class="row">
       <%= label_tag :min_price %>
-      <%= text_field_tag :min_price, params[:min_price] %>
-
       <%= label_tag :max_price %>
+      <%= label_tag :bedrooms %>
+      <%= label_tag :bathrooms %>
+      <%= label_tag :neighborhood %>
+      </div>
+
+    <div class="row">
+      <%= text_field_tag :min_price, params[:min_price] %>
       <%= text_field_tag :max_price, params[:max_price] %>
-
+      <%= text_field_tag :bedrooms, params[:bedrooms] %>
+      <%= text_field_tag :bathrooms, params[:bathrooms] %>
+      <%= select_tag(:neighborhood, options_from_collection_for_select(Location.all, :name, :name, params[:neighborhood]), {include_blank: true}) %>
+    </div>
+      
+      
+    <div class="row">
       <%= label_tag :min_sqft %>
-      <%= text_field_tag :min_sqft, params[:min_sqft] %>
-
       <%= label_tag :max_sqft %>
-      <%= text_field_tag :max_sqft, params[:max_sqft] %>
-
       <%= label_tag :cats %>
-      <%= check_box_tag :cats, "YES", params[:cats] %>
-
       <%= label_tag :dogs %>
-      <%= check_box_tag :dogs, "YES", params[:dogs] %>
-
       <%= label_tag :w_d_in_unit %>
-      <%= check_box_tag :w_d_in_unit, "YES", params[:w_d_in_unit] %>
-
       <%= label_tag :street_parking %>
-      <%= check_box_tag :street_parking, "YES", params[:street_parking] %>
+    </div>
 
-      <%= submit_tag "Search", name: nil %>
+    <div class="row">
+     <%= text_field_tag :min_sqft, params[:min_sqft] %>
+     <%= text_field_tag :max_sqft, params[:max_sqft] %>
+     <%= check_box_tag :cats, "YES", params[:cats] %>
+     <%= check_box_tag :dogs, "YES", params[:dogs] %>
+     <%= check_box_tag :w_d_in_unit, "YES", params[:w_d_in_unit] %>
+     <%= check_box_tag :street_parking, "YES", params[:street_parking] %>
+     <%= submit_tag "Search", name: nil %>
+     </div>
+     
     <% end %>
   </div>
 
