@@ -1,7 +1,7 @@
 <div class="container">
 
   <%= render 'filter' %>
-  
+
   <% if @posts.empty? %>
     <hr>
     <h3>No results found</h3>
@@ -9,6 +9,7 @@
     <table class="table table-hover table-condensed">
       <thead>
         <tr>
+          <th>Preview</th>
           <th>Heading</th>
           <th>Price</th>
           <th>Beds</th>
@@ -21,6 +22,13 @@
       <tbody>
         <% @posts.each do |post| %>
           <tr>
+            <td>
+              <% if post.images.empty? %>
+               <%= image_tag "http://www.eastbaymodern.com/idx/img/no-image.gif", class: "thumbnail" %>
+              <% else %>
+              <%= image_tag post.images.first.url, class: "thumbnail" %>
+              <% end %>
+            </td>
             <td><%= link_to post.heading, post %></td>
             <td><%= number_to_currency(post.price, precision: 0) %></td>
             <td><%= post.bedrooms %></td>
