@@ -1,67 +1,63 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
+    <div class="header">
+        <p>
+            <%= @post.heading %>
+        </p>
+
+        <p>
+            <%= @post.external_url %>
+        </p>
+    </div>
+
     <p>
-    <strong>Heading:</strong>
-    <%= @post.heading %>
+        <%= @post.price %>
     </p>
 
     <p>
-    <strong>Body:</strong>
-    <%= @post.body %>
+        <%= @post.timestamp %>
     </p>
 
     <p>
-    <strong>Price:</strong>
-    <%= @post.price %>
+        <%= @post.neighborhood %>
     </p>
 
     <p>
-    <strong>Neighborhood:</strong>
-    <%= @post.neighborhood %>
+        Bedrooms: <%= @post.bedrooms %>
     </p>
 
     <p>
-    <strong>External url:</strong>
-    <%= @post.external_url %>
+        Bathrooms: <%= @post.bathrooms %>
     </p>
 
     <p>
-    <strong>Timestamp:</strong>
-    <%= @post.timestamp %>
+        Square Footage: <%= @post.sqft %>
     </p>
 
     <p>
-    Bedrooms: <%= @post.bedrooms %>
+        Cats allowed: <%= @post.cats %>
     </p>
 
     <p>
-    Bathrooms: <%= @post.bathrooms %>
+        Dogs allowed: <%= @post.dogs %>
     </p>
 
     <p>
-    Square Footage: <%= @post.sqft %>
+        Washer/dryer in unit: <%= @post.w_d_in_unit %>
     </p>
 
     <p>
-    Cats allowed: <%= @post.cats %>
-    </p>
-
-    <p>
-    Dogs allowed: <%= @post.dogs %>
-    </p>
-
-    <p>
-    Washer/dryer in unit: <%= @post.w_d_in_unit %>
-    </p>
-
-    <p>
-    Street parking: <%= @post.street_parking %>
+        Street parking: <%= @post.street_parking %>
     </p>
 
     <% @images.each do |image| %>
       <%= image_tag image.url, class: "thumbnail" %>
     <% end %>
+
+     <p>
+        <%= @post.body %>
+    </p>
 
     <%= link_to 'Edit', edit_post_path(@post) %> |
     <%= link_to 'Back', posts_path %>
