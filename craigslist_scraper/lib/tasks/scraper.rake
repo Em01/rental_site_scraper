@@ -11,7 +11,7 @@
 	# Specify request parameters
 	params = {
 		auth_token: auth_token,
-		anchor: 1556869091,
+		anchor: Anchor.first.value,
 		source: "CRAIG", 
 		category_group: "RRRR",
 		category: "RHFR",
