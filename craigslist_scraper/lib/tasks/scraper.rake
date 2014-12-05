@@ -2,7 +2,7 @@
 	  desc "Fetch Craigslist posts from 3taps"
 	  task scrape: :environment do
 	  	require 'open-uri'
-	require 'json'
+		require 'json'
 
 	# Set API token and URL
 	auth_token = "6409d97db61178122ccb8a843050cad3"
