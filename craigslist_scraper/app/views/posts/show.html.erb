@@ -1,7 +1,7 @@
-<p id="notice"><%= notice %></p>
+    <p id="notice"><%= notice %></p>
 
-<div class="container">
-    <div class="header">
+    <div class="container">
+        <div class="header">
             <h3>
                 <%= @post.heading %>
             </p>
@@ -27,45 +27,45 @@
                     <%= @post.timestamp %>
                 </p>
 
-    <p>
-        <%= @post.neighborhood %>
-    </p>
+                <p>
+                    <%= @post.neighborhood %>
+                </p>
 
-    <p>
-        Bedrooms: <%= @post.bedrooms %>
-    </p>
+                <p>
+                    Bedrooms: <%= @post.bedrooms %>
+                </p>
 
-    <p>
-        Bathrooms: <%= @post.bathrooms %>
-    </p>
+                <p>
+                    Bathrooms: <%= @post.bathrooms %>
+                </p>
 
-    <p>
-        Square Footage: <%= @post.sqft %>
-    </p>
+                <p>
+                    Square Footage: <%= @post.sqft %>
+                </p>
 
-    <p>
-        Cats allowed: <%= @post.cats %>
-    </p>
+                <p>
+                    Cats allowed: <%= @post.cats %>
+                </p>
 
-    <p>
-        Dogs allowed: <%= @post.dogs %>
-    </p>
+                <p>
+                    Dogs allowed: <%= @post.dogs %>
+                </p>
 
-    <p>
-        Washer/dryer in unit: <%= @post.w_d_in_unit %>
-    </p>
+                <p>
+                    Washer/dryer in unit: <%= @post.w_d_in_unit %>
+                </p>
 
-    <p>
-        Street parking: <%= @post.street_parking %>
-    </p>
+                <p>
+                    Street parking: <%= @post.street_parking %>
+                </p>
 
-     <p>
-        <%= @post.body %>
-    </p>
+                <p>
+                    <%= @post.body %>
+                </p>
 
-    <%= link_to 'Edit', edit_post_path(@post) %> |
-    <%= link_to 'Back', posts_path %>
-    </div>
+                <%= link_to 'Edit', edit_post_path(@post) %> |
+                <%= link_to 'Back', posts_path %>
+            </div>
         </div>
     </div>
 </div>
